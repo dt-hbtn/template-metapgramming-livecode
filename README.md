@@ -1,2 +1,2 @@
-# template-metapgramming-livecode
-Demo of template metaprogramming using C++17
+# template-metaprogramming-livecode
+Demo of template metaprogramming using C++17 and the GoF Strategy Pattern
