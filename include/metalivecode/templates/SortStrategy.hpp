@@ -6,29 +6,29 @@
 
 namespace metalivecode::templates {
 
-/// @brief 
-/// @tparam T 
+/// @brief
+/// @tparam T
 template <typename T>
 class SortStrategy : public VectorStrategy<T> {
 public:
-	/// @brief 
+	/// @brief
 	SortStrategy(const bool descending = false)
-        : VectorStrategy<T>("SortStrategy"), descending(descending)
-    {
-    }
+		: VectorStrategy<T>("SortStrategy"), descending(descending)
+	{
+	}
 
-	/// @brief 
-	/// @param vector 
-	void algorithm(std::vector<T>& vector) const override
+	/// @brief
+	/// @param vector
+	void algorithm(std::vector<T> &vector) const override
 	{
 		if (descending)
-            std::sort(vector.begin(), vector.end(), std::greater<T>());
-        else
-            std::sort(vector.begin(), vector.end());
+			std::sort(vector.begin(), vector.end(), std::greater<T>());
+		else
+			std::sort(vector.begin(), vector.end());
 	}
 
 private:
-    const bool descending;
+	const bool descending;
 };
 
 } // namespace metalivecode::templates

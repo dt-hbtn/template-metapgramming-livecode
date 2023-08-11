@@ -8,25 +8,24 @@
 
 namespace metalivecode::templates {
 
-/// @brief 
-/// @tparam T 
+/// @brief
+/// @tparam T
 template <typename T, std::size_t N>
 class TakeStrategy : public VectorStrategy<T> {
 public:
-	/// @brief 
-	TakeStrategy()
-        : VectorStrategy<T>("TakeStrategy")
-    {
-    }
+	/// @brief
+	TakeStrategy() : VectorStrategy<T>("TakeStrategy")
+	{
+	}
 
-	/// @brief 
-	/// @param vector 
-	void algorithm(std::vector<T>& vector) const override
+	/// @brief
+	/// @param vector
+	void algorithm(std::vector<T> &vector) const override
 	{
 		if (N >= vector.size())
-            return;
-        
-        vector.resize(N);
+			return;
+
+		vector.resize(N);
 	}
 };
 

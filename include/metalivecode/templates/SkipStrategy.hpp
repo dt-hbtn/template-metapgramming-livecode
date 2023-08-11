@@ -3,32 +3,31 @@
 
 #include <algorithm>
 #include <cstddef>
-#include <functional>
 #include "metalivecode/templates/VectorStrategy.hpp"
 
 namespace metalivecode::templates {
 
-/// @brief 
-/// @tparam T 
+/// @brief
+/// @tparam T
 template <typename T, std::size_t N>
 class SkipStrategy : public VectorStrategy<T> {
 public:
-	/// @brief 
+	/// @brief
 	SkipStrategy() : VectorStrategy<T>("SkipStrategy")
-    {
-    }
+	{
+	}
 
-	/// @brief 
-	/// @param vector 
-	void algorithm(std::vector<T>& vector) const override
+	/// @brief
+	/// @param vector
+	void algorithm(std::vector<T> &vector) const override
 	{
 		if (N >= vector.size())
-        {
-            vector.clear();
-            return;
-        }
-        
-        vector.erase(vector.begin(), vector.begin() + N);
+		{
+			vector.clear();
+			return;
+		}
+
+		vector.erase(vector.begin(), vector.begin() + N);
 	}
 };
 
